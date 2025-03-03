@@ -1,0 +1,37 @@
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    fetchRegistry: false
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    renewal-percent-threshold: 0.85
+
+spring:
+  cloud:
+    config:
+      fail-fast: true
+
+management:
+  endpoints:
+    jmx:
+      exposure:
+        include: "health"
+    web:
+      exposure:
+        include: "health"
+  endpoint:
+    health:
+      show-details: never
+
+server:
+  error:
+    include-binding-errors: never
+    include-message: never
+    include-stacktrace: never
+    include-exception: false
+    whitelabel:
+      enabled: true
+  port: 8761

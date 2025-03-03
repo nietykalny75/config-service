@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: config-service
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/configurations
+      override-system-properties: false
+  groovy:
+    template:
+      check-template-location: false
+  main:
+    banner-mode: off
+  profiles:
+    active: native
+
+server:
+  port: 8888
+
+management:
+  endpoints:
+    jmx:
+      exposure:
+        include: "health"
+    web:
+      exposure:
+        include: "health"
+  endpoint:
+    health:
+      show-details: never
+

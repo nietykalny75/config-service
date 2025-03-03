@@ -1,1 +1,1 @@
-# config-service
+# config-service for all microservices
