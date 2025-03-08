@@ -1,14 +1,14 @@
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://eureka-discovery-service:8761/eureka/
 
 spring:
   security:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:8081/realms/nucleus
+          issuer-uri: http://keycloak:9999/realms/nucleus
 
 management:
   endpoints:
